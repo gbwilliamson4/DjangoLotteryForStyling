@@ -9,11 +9,12 @@
 </head>
 <body>
 
-<h2>Input new checkscan numbers</h2>
+<h2 class="lottery-title">Input new checkscan numbers</h2>
 
-<br>
+<!-- <br> -->
 
-<div class="row justify-content-left">
+<div class="form-body">
+<div class="row row1 justify-content-left">
     <div class="col-2">
         <form action="{% url 'lotteries:checkscan' %}" method="post" class="form">
             {% csrf_token %}
@@ -30,12 +31,13 @@
 <br>
 <br>
 
-<h2>Most recent winner is...</h2>
+<h2 class="data-header">Most recent winner is...</h2>
 <h3>{{ winner }}</h3>
 
 <br>
 <br>
 
+<div class="table-container">
 <h2>Most recent winner breakdown</h2>
 
 <table class="table table-striped table-hover">
@@ -90,11 +92,12 @@
 
 
 </table>
-
+</div>
 
 <br>
 <br>
 
+<div class="table-container">
 <h2>Previous Checkscan Data</h2>
 
 <table class="table table-striped table-hover">
@@ -143,7 +146,8 @@
         <li>No numbers have been added yet.</li>
     {% endfor %}
 </table>
-
+</div>
+</div>
 </body>
 
 {% endblock content %}

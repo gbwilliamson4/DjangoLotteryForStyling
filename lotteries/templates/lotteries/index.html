@@ -8,28 +8,37 @@
 </head>
 <body>
 
-<h1>Lottery! Woo!</h1>
+<h1 class="lottery-title">Lottery! Woo!</h1>
 
-<h2>Last 7 Days</h2>
+<div class="papa-container">
+<div class="data-container">
+<h2 class="data-header">Last 7 Days</h2>
 {% for win in wins_7 %}
 <p>{{ win.player_name }} - {{ win.win__player__count }}</p>
 {% endfor %}
+</div>
 
-<h2>Last 30 Days</h2>
+<div class="data-container">
+<h2 class="data-header">Last 30 Days</h2>
 {% for win in wins_30 %}
 <p>{{ win.player_name }} - {{ win.win__player__count }}</p>
 {% endfor %}
+</div>
 
-<h2>Entire Period</h2>
+<div class="data-container">
+<h2 class="data-header">Entire Period</h2>
 
 <p>I need to figure out how to mark period endings. It might actually be as easy as using a query and
     getting everything after an end date</p>
+</div>
 
-<h2>All time win data</h2>
+<div class="data-container">
+<h2 class="data-header">All time win data</h2>
 {% for win in wins_all %}
 <p>{{ win.player_name }} - {{ win.win__player__count }}</p>
 {% endfor %}
-
+</div>
+</div>
 </body>
 </html>
 
